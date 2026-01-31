@@ -5,12 +5,14 @@ import ostapProfile from "@/assets/ostap_profile.png";
 const founders = [
   {
     name: "Balint Biro",
+    avatarPicture: balintProfile,
     role: "Co-Founder & Co-CEO",
     description: "Building technology that brings clarity to complex systems.",
     linkedin: "#",
   },
   {
     name: "Ostap Kharysh",
+    avatarPicture: ostapProfile,
     role: "Co-Founder & Co-CEO",
     description: "Designing elegant solutions for challenging technical problems.",
     linkedin: "#",
@@ -39,14 +41,10 @@ const Team = () => {
               key={founder.name + founder.role}
               className="group bg-card rounded-lg border border-border p-6 lg:p-8 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5"
             >
-              {/* Avatar Placeholder */}
-              <div className="w-20 h-20 rounded-full bg-secondary mb-6 flex items-center justify-center">
-                <div className="w-10 h-10 rounded-full bg-primary/20" />
-              </div>
               <img
-                src={balintProfile}
+                src={founder.avatarPicture}
                 alt="Balint Biro"
-                className="w-20 h-20 rounded-full object-cover mb-6"
+                className="w-28 h-28 rounded-full object-cover mb-6"
               />
 
               <h3 className="text-xl font-semibold mb-1">{founder.name}</h3>
