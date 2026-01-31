@@ -76,19 +76,12 @@ const Contact = () => {
                 <p className="text-sm text-muted-foreground mb-4">Follow us</p>
                 <div className="flex gap-4">
                   <a
-                    href="#"
-                    className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Linkedin className="w-5 h-5" />
-                  </a>
-                  <a
                     href="https://www.linkedin.com/company/feedbag-ai"
                     className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
+                    <Linkedin className="w-5 h-5" />
                   </a>
                 </div>
               </div>
