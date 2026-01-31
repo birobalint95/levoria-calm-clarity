@@ -2,14 +2,14 @@ import { Linkedin } from "lucide-react";
 
 const founders = [
   {
-    name: "Founder Name",
-    role: "Co-Founder & CEO",
+    name: "Balint Biro",
+    role: "Co-Founder & Co-CEO",
     description: "Building technology that brings clarity to complex systems.",
     linkedin: "#",
   },
   {
-    name: "Founder Name",
-    role: "Co-Founder & CTO",
+    name: "Ostap Kharysh",
+    role: "Co-Founder & Co-CEO",
     description: "Designing elegant solutions for challenging technical problems.",
     linkedin: "#",
   },
@@ -20,7 +20,7 @@ const Team = () => {
     <section id="team" className="py-20 lg:py-32 bg-secondary/30">
       <div className="section-container">
         {/* Section Header */}
-        <div className="max-w-2xl mb-16">
+        <div className="mb-16">
           <h2 className="text-3xl md:text-4xl font-semibold mb-6">Team</h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
             Levoria was founded by experienced technologists who believe that
@@ -31,7 +31,7 @@ const Team = () => {
         </div>
 
         {/* Founder Cards */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-3xl">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {founders.map((founder) => (
             <div
               key={founder.name + founder.role}
