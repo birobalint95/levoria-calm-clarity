@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import inToolPicture from "@/assets/in-tool-picture.png";
 
 const Solutions = () => {
   return (
@@ -24,23 +25,7 @@ const Solutions = () => {
               </h3>
               <div className="space-y-4 text-muted-foreground leading-relaxed mb-8">
                 <p>
-                  FeedBag.ai helps teams make sense of complex, fragmented
-                  information and turn it into clear guidance they can act on.
-                </p>
-                <p>
-                  In many organizations, critical knowledge is scattered across
-                  documents, tools, and conversations, making it hard to
-                  understand what really matters, what depends on what, and
-                  where attention is needed next. FeedBag.ai brings these
-                  signals together, structures them, and presents them in a way
-                  that supports better thinking and more confident
-                  decision-making.
-                </p>
-                <p>
-                  Instead of adding yet another dashboard, FeedBag.ai focuses on
-                  clarity: highlighting relationships, surfacing relevant
-                  context, and guiding teams toward meaningful actions when
-                  complexity would otherwise slow them down.
+                  FeedBag.ai helps organizations deliver on time by making hidden team dependencies visible, detectable, and actionable. Built on top of your existing tools, it integrates seamlessly into day-to-day operations while providing a clear view of who depends on whom and where work is at risk. With AI-powered diagnostic, reactive, and preventive suggestions, teams can understand delays, unblock work, and prevent disruptions before they cascade.
                 </p>
               </div>
               <a
@@ -55,26 +40,10 @@ const Solutions = () => {
             {/* Visual Mockups */}
             <div className="space-y-4">
               <div className="bg-secondary/50 rounded-lg aspect-video flex items-center justify-center border border-border">
-                <div className="text-center p-8">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                    <div className="w-8 h-8 rounded-full bg-primary/30" />
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Product visualization
-                  </p>
-                </div>
-              </div>
-              <div className="bg-secondary/50 rounded-lg aspect-[16/9] flex items-center justify-center border border-border">
-                <div className="text-center p-8">
-                  <div className="flex gap-2 justify-center mb-4">
-                    <div className="w-12 h-3 rounded bg-primary/20" />
-                    <div className="w-16 h-3 rounded bg-primary/30" />
-                    <div className="w-10 h-3 rounded bg-primary/20" />
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Interface preview
-                  </p>
-                </div>
+                <img
+                  src={inToolPicture}
+                  alt="In-tool screenshot"
+                />
               </div>
             </div>
           </div>
