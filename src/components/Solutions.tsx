@@ -39,12 +39,11 @@ const Solutions = () => {
 
             {/* Visual Mockups */}
             <div className="space-y-4">
-              <div className="bg-secondary/50 rounded-lg aspect-video flex items-center justify-center border border-border">
                 <img
                   src={inToolPicture}
                   alt="In-tool screenshot"
+                  className="bg-secondary/50 rounded-lg aspect-video items-center justify-center border border-border"
                 />
-              </div>
             </div>
           </div>
         </div>

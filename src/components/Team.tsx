@@ -7,15 +7,15 @@ const founders = [
     name: "Balint Biro",
     avatarPicture: balintProfile,
     role: "Co-Founder & Co-CEO",
-    description: "Building technology that brings clarity to complex systems.",
-    linkedin: "#",
+    description: "Balint brings a strong product and technical background, with experience in product management, software development, and enterprise automation.",
+    linkedin: "https://www.linkedin.com/in/balintbiro/",
   },
   {
     name: "Ostap Kharysh",
     avatarPicture: ostapProfile,
     role: "Co-Founder & Co-CEO",
-    description: "Designing elegant solutions for challenging technical problems.",
-    linkedin: "#",
+    description: "Ostap brings experience across product leadership, delivery, and business consulting, with a focus on automation, optimization, and real-world execution.",
+    linkedin: "https://www.linkedin.com/in/ostapkharysh/",
   },
 ];
 
@@ -27,10 +27,7 @@ const Team = () => {
         <div className="mb-16">
           <h2 className="text-3xl md:text-4xl font-semibold mb-6">Team</h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Levoria was founded by experienced technologists who believe that
-            the best software makes complex things feel simple. We're building
-            tools that help organizations think more clearly and act more
-            confidently.
+            <b>Levoria</b> was founded by experienced technologists and product leaders who believe the best software makes complex systems feel simple. Together, they bring hands-on experience across product management, engineering, automation, and enterprise consulting, shaping tools that help organizations think clearly and act with confidence.
           </p>
         </div>
 
