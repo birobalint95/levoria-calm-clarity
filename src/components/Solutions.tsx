@@ -5,7 +5,7 @@ const Solutions = () => {
     <section id="solutions" className="py-20 lg:py-32">
       <div className="section-container">
         {/* Section Header */}
-        <div className="max-w-2xl mb-16">
+        <div className="mb-16">
           <h2 className="text-3xl md:text-4xl font-semibold mb-6">Solutions</h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
             Levoria builds multiple solutions addressing complex organizational

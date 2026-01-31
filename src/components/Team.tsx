@@ -1,4 +1,6 @@
 import { Linkedin } from "lucide-react";
+import balintProfile from "@/assets/balint_profile.png";
+import ostapProfile from "@/assets/ostap_profile.png";
 
 const founders = [
   {
@@ -41,6 +43,11 @@ const Team = () => {
               <div className="w-20 h-20 rounded-full bg-secondary mb-6 flex items-center justify-center">
                 <div className="w-10 h-10 rounded-full bg-primary/20" />
               </div>
+              <img
+                src={balintProfile}
+                alt="Balint Biro"
+                className="h-8 lg:h-10 w-auto"
+              />
 
               <h3 className="text-xl font-semibold mb-1">{founder.name}</h3>
               <p className="text-primary text-sm font-medium mb-3">
