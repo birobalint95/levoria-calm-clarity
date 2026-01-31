@@ -30,8 +30,8 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex flex-col justify-center pt-40 pb-16">
       <div className="section-container">
         {/* Hero Content */}
-        <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-24">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight 12 animate-fade-in-up">
+        <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-8">
+          <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight 12 animate-fade-in-up">
             Make complex systems{" "}
             <span className="text-primary">understandable.</span>
           </h1>
