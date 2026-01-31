@@ -12,14 +12,14 @@ const Careers = () => {
   return (
     <section id="careers" className="py-20 lg:py-32 bg-secondary">
       <div className="section-container">
-        <div className="max-w-2xl">
+        <div>
           {/* Section Header */}
           <h2 className="text-3xl md:text-4xl font-semibold mb-6">
-            Careers & working style
+            Careers
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-10">
-            At Levoria, we work with intention. We believe great products come
-            from small teams that care deeply, move thoughtfully, and take pride
+            At <b>Levoria</b>, we work with intention. We believe great products come
+            from teams that care deeply, move thoughtfully, and take pride
             in craftsmanship. We value clarity in communication and calm
             execution over chaos.
           </p>

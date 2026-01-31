@@ -42,7 +42,7 @@ const Solutions = () => {
                 <img
                   src={inToolPicture}
                   alt="In-tool screenshot"
-                  className="bg-secondary/50 rounded-lg aspect-video items-center justify-center border border-border"
+                  className="bg-secondary/50 rounded-lg flex items-center justify-center border border-border"
                 />
             </div>
           </div>
