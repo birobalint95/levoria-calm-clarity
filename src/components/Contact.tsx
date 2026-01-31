@@ -1,9 +1,93 @@
-import { Mail, Linkedin, Twitter } from "lucide-react";
+import { useMemo, useState } from "react";
+import { Mail, Linkedin } from "lucide-react";
+import emailjs from "@emailjs/browser";
+
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+type Status = "idle" | "sending" | "success" | "error";
+
 const Contact = () => {
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const [status, setStatus] = useState<Status>("idle");
+  const [statusText, setStatusText] = useState<string>("");
+
+  const isSending = status === "sending";
+
+  const canSubmit = useMemo(() => {
+    return (
+      fullName.trim().length > 0 &&
+      emailRegex.test(email.trim()) &&
+      message.trim().length > 0 &&
+      !isSending
+    );
+  }, [fullName, email, message, isSending]);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    const trimmedName = fullName.trim();
+    const trimmedEmail = email.trim();
+    const trimmedMessage = message.trim();
+
+    // Basic validation with clear feedback
+    if (!trimmedName) {
+      setStatus("error");
+      setStatusText("Please enter your name.");
+      return;
+    }
+    if (!emailRegex.test(trimmedEmail)) {
+      setStatus("error");
+      setStatusText("Please enter a valid email address.");
+      return;
+    }
+    if (!trimmedMessage) {
+      setStatus("error");
+      setStatusText("Please enter a message.");
+      return;
+    }
+
+    setStatus("sending");
+    setStatusText("");
+
+    try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error("Missing EmailJS env vars. Check your .env file.");
+      }
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: trimmedName,
+          from_email: trimmedEmail,
+          message: trimmedMessage,
+        },
+        { publicKey }
+      );
+
+      setStatus("success");
+      setStatusText("Thanks! Your message has been sent.");
+      setFullName("");
+      setEmail("");
+      setMessage("");
+    } catch (err) {
+      console.error("EmailJS send failed:", err);
+      setStatus("error");
+      setStatusText("Something went wrong. Please try again later.");
+    }
+  }
+
   return (
     <section id="contact" className="py-20 lg:py-32">
       <div className="section-container">
@@ -18,13 +102,23 @@ const Contact = () => {
               your organization? We'd love to hear from you.
             </p>
 
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-6" onSubmit={handleSubmit} noValidate>
               <div className="space-y-2">
                 <Label htmlFor="name">Name</Label>
                 <Input
                   id="name"
+                  value={fullName}
+                  onChange={(e) => {
+                    setFullName(e.target.value);
+                    if (status !== "idle") {
+                      setStatus("idle");
+                      setStatusText("");
+                    }
+                  }}
                   placeholder="Your name"
                   className="bg-card border-border focus:border-primary"
+                  autoComplete="name"
+                  disabled={isSending}
                 />
               </div>
 
@@ -33,8 +127,18 @@ const Contact = () => {
                 <Input
                   id="email"
                   type="email"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    if (status !== "idle") {
+                      setStatus("idle");
+                      setStatusText("");
+                    }
+                  }}
                   placeholder="your@email.com"
                   className="bg-card border-border focus:border-primary"
+                  autoComplete="email"
+                  disabled={isSending}
                 />
               </div>
 
@@ -42,17 +146,41 @@ const Contact = () => {
                 <Label htmlFor="message">Message</Label>
                 <Textarea
                   id="message"
+                  value={message}
+                  onChange={(e) => {
+                    setMessage(e.target.value);
+                    if (status !== "idle") {
+                      setStatus("idle");
+                      setStatusText("");
+                    }
+                  }}
                   placeholder="How can we help?"
                   rows={5}
                   className="bg-card border-border focus:border-primary resize-none"
+                  disabled={isSending}
                 />
               </div>
 
+              {status !== "idle" && (
+                <p
+                  className={
+                    status === "success"
+                      ? "text-sm text-green-500"
+                      : status === "error"
+                      ? "text-sm text-destructive"
+                      : "text-sm text-muted-foreground"
+                  }
+                >
+                  {status === "sending" ? "Sending..." : statusText}
+                </p>
+              )}
+
               <button
                 type="submit"
-                className="w-full sm:w-auto px-8 py-3.5 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/90 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+                disabled={!canSubmit}
+                className="w-full sm:w-auto px-8 py-3.5 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/90 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-60 disabled:pointer-events-none"
               >
-                Send message
+                {isSending ? "Sending..." : "Send message"}
               </button>
             </form>
           </div>
@@ -80,6 +208,7 @@ const Contact = () => {
                     className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="LinkedIn"
                   >
                     <Linkedin className="w-5 h-5" />
                   </a>
