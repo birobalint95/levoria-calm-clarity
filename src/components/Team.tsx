@@ -46,7 +46,7 @@ const Team = () => {
               <img
                 src={balintProfile}
                 alt="Balint Biro"
-                className="h-8 lg:h-10 w-auto"
+                className="w-20 h-20 rounded-full object-cover mb-6"
               />
 
               <h3 className="text-xl font-semibold mb-1">{founder.name}</h3>
