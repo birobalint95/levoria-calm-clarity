@@ -63,8 +63,10 @@ const Hero = () => {
               className="group p-6 lg:p-8 bg-card rounded-lg border border-border hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5 animate-fade-in-up"
               style={{ animationDelay: `${0.3 + index * 0.1}s` }}
             >
-              <pillar.icon className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition-transform duration-300" />
-              <h3 className="text-lg font-semibold mb-2">{pillar.title}</h3>
+              <div className="flex items-center gap-3 mb-4">
+                <pillar.icon className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="text-lg font-semibold mb-2">{pillar.title}</h3>
+              </div>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 {pillar.description}
               </p>
