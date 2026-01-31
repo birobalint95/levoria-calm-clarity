@@ -2,13 +2,13 @@ import { ArrowRight } from "lucide-react";
 
 const Solutions = () => {
   return (
-    <section id="solutions" className="py-20 lg:py-32">
+    <section id="solutions" className="py-20 lg:py-32 bg-secondary/30">
       <div className="section-container">
         {/* Section Header */}
         <div className="mb-16">
           <h2 className="text-3xl md:text-4xl font-semibold mb-6">Solutions</h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Levoria builds multiple solutions addressing complex organizational
+            <b>Levoria</b> builds solutions addressing complex organizational
             and technical challenges. Each product is designed to bring clarity
             where complexity creates friction.
           </p>
