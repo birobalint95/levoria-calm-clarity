@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 
 const Solutions = () => {
   return (
-    <section id="solutions" className="py-20 lg:py-32 bg-secondary/30">
+    <section id="solutions" className="py-20 lg:py-32 bg-secondary">
       <div className="section-container">
         {/* Section Header */}
         <div className="mb-16">
@@ -44,7 +44,7 @@ const Solutions = () => {
                 </p>
               </div>
               <a
-                href="#"
+                href="https://feedbag.ai/" target="_blank"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/90 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] group"
               >
                 Explore product

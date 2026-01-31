@@ -10,7 +10,7 @@ const values = [
 
 const Careers = () => {
   return (
-    <section id="careers" className="py-20 lg:py-32">
+    <section id="careers" className="py-20 lg:py-32 bg-secondary">
       <div className="section-container">
         <div className="max-w-2xl">
           {/* Section Header */}

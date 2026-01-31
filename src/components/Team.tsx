@@ -21,7 +21,7 @@ const founders = [
 
 const Team = () => {
   return (
-    <section id="team" className="py-20 lg:py-32 bg-secondary/30">
+    <section id="team" className="py-20 lg:py-32">
       <div className="section-container">
         {/* Section Header */}
         <div className="mb-16">

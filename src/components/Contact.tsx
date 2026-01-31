@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 lg:py-32 bg-secondary/30">
+    <section id="contact" className="py-20 lg:py-32">
       <div className="section-container">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Contact Form */}
