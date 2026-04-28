@@ -183,7 +183,7 @@ const Alignum = () => {
             />
 
             {/* Approval */}
-            <RadioGroup
+            <RadioGroup<"ask" | "auto">
               label="Approval"
               value={approval}
               onChange={setApproval}
@@ -194,7 +194,7 @@ const Alignum = () => {
             />
 
             {/* Initiative */}
-            <RadioGroup
+            <RadioGroup<"own" | "sent">
               label="Initiative"
               value={initiative}
               onChange={setInitiative}
