@@ -64,7 +64,7 @@ const Footer = () => {
               Imprint
             </a>
             <a
-              href="#"
+              href="/privacy-policy"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Privacy
